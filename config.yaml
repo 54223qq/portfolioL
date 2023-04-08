@@ -1,0 +1,65 @@
+baseURL: https://eternity.bora.sh # todo: change site url.
+title: 韦玉莲的设计小屋 # todo: change site name.
+defaultContentLanguage: 'ch'
+theme: eternity
+googleAnalytics: '' # todo: set your analytics id.
+
+params:
+  image: /images/banner.png
+  logo: logo.png # todo: add your custom logo to static/
+  subtitle: 一个平面设计师. # todo: change default subtitle for your website.
+  copyright: All rights reserved. # todo: set your copyright type.
+  author: 韦玉莲 # todo: set your full name.
+  dontShowSource: false # please, do not do this :)
+  portfolio:
+    columns:
+      desktop:
+        poster: 2
+        kv: 1
+        vis: 1
+        archive: 3
+        default: 3
+      mobile:
+        default: 2
+        archive: 2
+        kv: 1
+        vis: 1
+        poster: 1
+
+  homepage: "/work" # homepage link, mostly same with menu.main[0]
+  specialPages:
+    - work
+    - archive
+  bypassWelcomePage: false # redirects "/" to "homepage" when it's true.
+  disableWelcomePageBackground: false # disables the background image on the homepage
+  plausible: '' # todo: set your plausible id.
+  disableRadius: false
+  moveIt: false  # Moves Title and Meta info down, only visible when scroll.
+  disableAlwaysResize: false
+
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    renderer:
+      unsafe: true
+
+taxonomies:
+  tag: tags
+
+permalinks:
+  work: ":filename/"
+
+menu:
+  main:
+    - name: 关于我
+      url: /work/
+      weight: 1
+    - name: 海报设计
+      url: /tags/poster
+      weight: 2      
+    - name: 主KV设计
+      url: /tags/kv/
+      weight: 3
+    - name: vis设计
+      url: /tags/vis/
+      weight: 4      
